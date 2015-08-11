@@ -1,0 +1,18 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+
+    "queues": {
+      "default": {
+        "tasks": {
+          // doesn't work with index on
+          ".indexOn": ["_state"],
+
+          "$eventid": {
+          }
+        }
+      }
+    }
+  }
+}
