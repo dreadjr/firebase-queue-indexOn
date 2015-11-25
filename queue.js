@@ -18,7 +18,7 @@ console.log('URL', process.env.FIREBASE_URL);
 console.log('SECRET', process.env.FIREBASE_SECRET || 'n/a');
 
 var fb = new Firebase(process.env.FIREBASE_URL);
-var fbAuth = !!process.env.FIREBASE_SECRET ? Promise.promisify(fb.authWithCustomToken, fb) : noop;
+var fbAuth = !!process.env.FIREBASE_SECRET ? Promise.promisify(fb.authWithCustomToken, { context: fb }) : noop;
 
 var specs = {
   "default": {
